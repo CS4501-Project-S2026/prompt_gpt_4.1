@@ -1,0 +1,117 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #e6f0ff;
+    margin: 0;
+    color: #115f7e;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(90deg, #134e6f, #00b3ac);
+    padding: 1em 2em;
+  }
+  
+  nav a, nav span {
+    color: #e3ffe2;
+    margin-right: 2em;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  h1, h2, h3 {
+    color: #134e6f;
+  }
+  
+  main {
+    max-width: 700px;
+    margin: 2em auto;
+    padding: 2em;
+    background: #f9fdff;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(19,78,111, 0.09);
+  }
+  
+  ul.prompt-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ul.prompt-list li {
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid #b1d0ea;
+    padding-bottom: 1em;
+  }
+  
+  ul.responses {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul.responses li {
+    margin-bottom: 1.6em;
+    padding: .6em .6em 1em;
+    background: #e3f8ff;
+    border-radius: 7px;
+    border: 1px solid #b1d0ea;
+  }
+  
+  ul.responses strong {
+    color: #156186;
+  }
+  
+  img.preview {
+    max-width: 150px;
+    margin: 0.5em 0;
+    border-radius: 4px;
+    border: 1px solid #81d7d7;
+  }
+  
+  form div {
+    margin-bottom: 1em;
+  }
+  
+  textarea {
+    width: 97%;
+    border-radius: 4px;
+    border: 1px solid #9ec6e4;
+    padding: 0.5em;
+    resize: vertical;
+    font-size: 1em;
+  }
+  
+  input[type="text"], input[type="password"], input[type="file"] {
+    border-radius: 4px;
+    border: 1px solid #9ec6e4;
+    padding: 0.3em;
+  }
+  
+  button {
+    background: linear-gradient(90deg, #009fc2, #16e2c2);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: .6em 1.4em;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: linear-gradient(90deg, #00b9e3, #20d8af);
+  }
+  
+  .flash {
+    margin: 0;
+    padding: 0.7em;
+    list-style: none;
+    background: #b3f6fc;
+    border-radius: 4px;
+    color: #256d8d;
+    text-align: center;
+    margin-bottom: 1em;
+  }

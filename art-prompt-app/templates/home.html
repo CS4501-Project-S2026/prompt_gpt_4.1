@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Home - Art Prompts{% endblock %}
+{% block content %}
+  <h1>Daily Art Prompts</h1>
+  <ul class="prompt-list">
+    {% for prompt in prompts %}
+      <li>
+        <a href="{{ url_for('prompt_page', prompt_id=prompt['id']) }}">
+          <strong>{{ prompt['title'] }}</strong>
+        </a><br>
+        <span>{{ prompt['description'] | safe }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

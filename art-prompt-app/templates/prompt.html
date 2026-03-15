@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}{{ prompt['title'] }} - Art Prompt{% endblock %}
+{% block content %}
+  <h2>{{ prompt['title'] }}</h2>
+  <p>{{ prompt['description'] }}</p>
+  <hr>
+  <section>
+    <h3>Responses</h3>
+    {% if responses %}
+      <ul class="responses">
+      {% for r in responses %}
+        <li>
+          <div>
+            <strong>{{ r['username'] }}</strong> <em>{{ r['timestamp'] }}</em>
+          </div>
+          {% if r['text'] %}
+            <div>{{ r['text'] | e }}</div>
+          {% endif %}
+          {% if r['filename'] %}
+            <div>
+              <a href="{{ url_for('uploaded_file', filename=r['filename']) }}" target="_blank">[View Attachment]</a>
+            </div>
+            {% if r['filename'].endswith(('png', 'jpg', 'jpeg', 'gif', 'svg')) %}
+              <img src="{{ url_for('uploaded_file', filename=r['filename']) }}" class="preview" alt="Image preview">
+            {% endif %}
+          {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No responses yet.</p>
+    {% endif %}
+  </section>
+  <hr>
+  {% if current_user.is_authenticated %}
+    <section>
+      <h3>Your Response</h3>
+      <form method="POST" enctype="multipart/form-data">
+        <div>
+          <label>Text:<br>
+            <textarea name="text" rows="3" cols="44"></textarea>
+          </label>
+        </div>
+        <div>
+          <label>File: <input type="file" name="file" accept=".png,.jpg,.jpeg,.gif,.pdf,.svg"></label>
+        </div>
+        <button type="submit">Post</button>
+      </form>
+    </section>
+  {% else %}
+    <p><a href="{{ url_for('login') }}">Log in</a> to reply to this prompt.</p>
+  {% endif %}
+{% endblock %}

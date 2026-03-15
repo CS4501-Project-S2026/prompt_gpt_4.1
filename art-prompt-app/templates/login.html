@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Login - Art Prompts{% endblock %}
+{% block content %}
+  <h2>Login</h2>
+  <form method="POST">
+    <div>
+      <label>Username: <input type="text" name="username" required></label>
+    </div>
+    <div>
+      <label>Password: <input type="password" name="password" required></label>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+{% endblock %}
